@@ -7,16 +7,16 @@ public class EnemyAttack : MonoBehaviour
     public float timeBetweenAttacks;
     public int attackDamage;
 
-    GameObject player;              //referencia al player
-    PlayerHealth playerHealth;      //referencia a playerHealth
+    GameObject player;              
+    PlayerHealth playerHealth;      
     EnemyHealth enemyHealth;
 
     bool playerInRange;
     float timer;
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");    //me traigo el GO Player.
-        playerHealth = player.GetComponent<PlayerHealth>();     // accedo al script PlayerHealth del GO Player.
+        player = GameObject.FindGameObjectWithTag("Player");   
+        playerHealth = player.GetComponent<PlayerHealth>();     
 
         enemyHealth = GetComponent<EnemyHealth>();
     }

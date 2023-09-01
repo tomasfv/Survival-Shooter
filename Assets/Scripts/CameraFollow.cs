@@ -5,15 +5,15 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform player;
-    public float smooting;  //velocidad de seguimiento de la cámara al player
+    public float smooting;  
 
-    Vector3 offset; //distancia inicial entre camara y player. 
+    Vector3 offset; 
     void Start()
     {
         offset = transform.position - player.position;
     }
 
-    void LateUpdate()   //LateUpdate es "lo último que se ejecuta antes de abandonar el frame"
+    void LateUpdate()   
     {
         Vector3 targetCamPos = player.position + offset;
 

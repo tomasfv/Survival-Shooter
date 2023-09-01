@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider slider;
     public Image damageImage;
     
-    public float flashSpeed;                //Velocidad a la que va a desaparecer la imagen. 
+    public float flashSpeed;                
     public Color flashColor;
 
     public GameManager gameManager;
@@ -19,9 +19,9 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip deathClip;
 
     AudioSource audioS;
-    Animator anim;                          //variable privada tipo componente.
-    PlayerMovement playerMovement;          //variable privada tipo componente.
-    PlayerShooting playerShooting;          //variable privada tipo componente. 
+    Animator anim;                         
+    PlayerMovement playerMovement;          
+    PlayerShooting playerShooting;         
 
     bool isDead;
     bool damaged;
@@ -33,8 +33,8 @@ public class PlayerHealth : MonoBehaviour
 
         audioS = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
-        playerMovement = GetComponent<PlayerMovement>();     //accedo al componente PlayerMovement que está en el GO que tiene este Script.
-        playerShooting = GetComponentInChildren<PlayerShooting>();  //accedo al componente de un hijo del GO que tiene este script. 
+        playerMovement = GetComponent<PlayerMovement>();     
+        playerShooting = GetComponentInChildren<PlayerShooting>();  
     }
 
     void Update()
@@ -51,10 +51,10 @@ public class PlayerHealth : MonoBehaviour
         damaged = false;
     }
 
-    //función pública que voy a llamar desde el script del enemigo. 
+   
     public void TakeDamage(int amount)
     {
-        if (isDead) return;  //si el player ha muerto se sale de la función. 
+        if (isDead) return;  
 
         audioS.Play();
         damaged = true;
@@ -70,12 +70,12 @@ public class PlayerHealth : MonoBehaviour
         audioS.Play();
 
         isDead = true;
-        anim.SetTrigger("Death");           //ejecutamos la animación de muerte
-        playerMovement.enabled = false;     //deshabilitamos el movimiento del player.
-        playerShooting.enabled = false;     //deshabilitamos el disparo del player.
+        anim.SetTrigger("Death");           
+        playerMovement.enabled = false;     
+        playerShooting.enabled = false;     
     }
 
-    //Función pública que va como evento en la animación de Death del player.
+   
     public void DeathComplete()
     {
         gameManager.GameOver();

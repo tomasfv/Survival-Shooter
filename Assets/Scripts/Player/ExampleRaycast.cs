@@ -8,12 +8,9 @@ public class ExampleRaycast : MonoBehaviour
     public float rayLength;
     public LayerMask layerRay;
 
-    Ray ray; // el rayo.
-    RaycastHit hit;  //GO con el que choca el rayo. tiene que tener un collider. 
-    void Start()
-    {
-        
-    }
+    Ray ray; 
+    RaycastHit hit;  
+ 
 
     void Update()
     {
